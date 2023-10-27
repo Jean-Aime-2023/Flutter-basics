@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'qoute.dart';
+import 'quote_card.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -21,33 +22,10 @@ class _QuoteListState extends State<QuoteList> {
     Quote(author: 'Kate Marry', text: 'The truth is rarely simple but never simple'),
   ];
 
+
+
   Widget quoteTemplate(Quote quote) {
-    return Card(
-      margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              quote.text,
-              style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.grey[600],
-              ),
-            ),
-            SizedBox(height: 6.0),
-            Text(
-              quote.author,
-              style: TextStyle(
-                fontSize: 14.0,
-                color: Colors.grey[800],
-              ),
-            ), // Add a closing parenthesis here
-          ],
-        ),
-      ),
-    );
+    return QuoteCard(quote : quote);
   }
 
   @override
@@ -65,3 +43,4 @@ class _QuoteListState extends State<QuoteList> {
     );
   }
 }
+
