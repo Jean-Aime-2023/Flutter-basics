@@ -2,59 +2,38 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Home(),
+    home: QuoteList(),
   ));
 }
 
+class QuoteList extends StatefulWidget {
+  const QuoteList({super.key});
 
-class Home extends StatelessWidget {
-  // const ({super.key});
+  @override
+  State<QuoteList> createState() => _QuoteListState();
+}
+
+class _QuoteListState extends State<QuoteList> {
+
+  List<String> quotes = [
+    'Be yourself,everyone else is already taken',
+    'I have nothing to declare except my genius',
+    'The truth is rarely simple but never simple'
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('My first app'),
+        title: Text('Awesome Quotes'),
         centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.redAccent,
       ),
-      body: Row(
-        children: [
-          Expanded(child: Image.asset('assets/image2.jpeg'),flex:5),
-          Expanded(
-            flex: 3,
-            child: Container(
-                padding: EdgeInsets.all(30.0),
-                color: Colors.cyan,
-                child: Text('1'),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child:Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.pinkAccent,
-              child: Text('2'),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child:Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.amber,
-              child: Text('3'),
-            ),
-          )
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your action here
-        },
-        child: Text('click'),
-        backgroundColor: Colors.red,
+      body: Column(
+        children: quotes.map((quote) => Text(quote)).toList(),
       ),
     );
   }
-  }
+}
 
