@@ -23,14 +23,12 @@ class _QuoteListState extends State<QuoteList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //background color
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text('Awesome Quotes'),
         centerTitle: true,
         backgroundColor: Colors.redAccent,
       ),
-      //background color
       body: Column(
         children: quotes.map((quote) => QuoteCard(
             quote: quote,
