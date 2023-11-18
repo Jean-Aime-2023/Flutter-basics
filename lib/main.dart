@@ -29,6 +29,7 @@ class _QuoteListState extends State<QuoteList> {
         centerTitle: true,
         backgroundColor: Colors.redAccent,
       ),
+      //boby
       body: Column(
         children: quotes.map((quote) => QuoteCard(
             quote: quote,
